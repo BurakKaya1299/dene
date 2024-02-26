@@ -12,10 +12,10 @@ MLX_DIR	= ./mlx
 
 CC		=  gcc
 
-CFLAGS	= -Wall -Wextra -Werror -I$(MLX_DIR)
+CFLAGS	= -Wall -Wextra -Werror 
 
 all: $(NAME)
-	clear
+	
 
 $(NAME): $(MLX) $(SRCS) $(LIBFT)
 	$(CC) $(CFLAGS) $(SRCS) -L $(LIBF_DIR) -lft -L $(MLX_DIR) -lmlx -framework OpenGL -framework AppKit -o $(NAME) 
@@ -31,7 +31,7 @@ clean:
 	make clean -C $(LIBF_DIR)
 
 fclean: clean
-	make fclean -C ../libft
+	make fclean -C ./libft
 	rm -rf $(NAME)
 
 re: fclean all
